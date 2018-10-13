@@ -4,6 +4,8 @@ import javafx.scene.image.Image;
 
 
 import java.io.File;
+import java.nio.file.Path;
+import java.security.SecureRandom;
 import java.time.LocalDate;
 
 public class Contact {
@@ -13,6 +15,7 @@ public class Contact {
     private File profileImage;
 
     public Contact(String firstName, String lastName, LocalDate birthday, String address, String phone) {
+        setProfileImage(new File("./src/image/default-image.jpg"));
         setFirstName(firstName);
         setLastName(lastName);
         setBirthday(birthday);
@@ -21,12 +24,8 @@ public class Contact {
     }
 
     public Contact(File userImage, String firstName, String lastName, LocalDate birthday, String address, String phone) {
+        this(firstName, lastName, birthday, address, phone);
         setProfileImage(userImage);
-        setFirstName(firstName);
-        setLastName(lastName);
-        setBirthday(birthday);
-        setAddress(address);
-        setPhone(phone);
     }
 
     public int getID() { return ID; }
@@ -44,6 +43,100 @@ public class Contact {
 
     public void setProfileImage(File profileImage) {
         this.profileImage = profileImage;
+    }
+
+    /**
+     * This method will copy the file specified to the images
+     * directory on this server,
+     * then give it a unique name
+     * @return
+     */
+    public void copyImageFile()
+    {
+        // create a new Path to copy the image into a local directory
+        Path sourcePath = profileImage.toPath();
+
+        String uniqueFileName = getUniqueFileName(profileImage.getName());
+
+        Path targetPath =
+    }
+
+    /**
+     * This method will receive a String that represents a file name
+     * and return a String with a random, unique set
+     * of letters prefixed to it
+     * @return
+     */
+    private String getUniqueFileName(String oldFileName)
+    {
+        String newName;
+
+        // create a Random Number Generator
+        SecureRandom rng = new SecureRandom();
+
+        // loop until we have a unique file name
+        do
+        {
+            newName = "";
+
+            // generate 32 random characters
+            for (int count = 1; count <= 32; count++)
+            {
+                int nextChar;
+
+                do
+                {
+                    nextChar = rng.nextInt(123);
+                } while(!validCharacterValue(nextChar));
+
+                newName = String.format("%s%c", newName, nextChar);
+            }
+            newName += oldFileName;
+
+        } while (!uniqueFileInDirectory(newName));
+
+        return newName;
+    }
+
+    /**
+     * This method will search the images directory and ensure that
+     * the file name is unique
+     */
+    public boolean uniqueFileInDirectory(String fileName)
+    {
+        File directory = new File("./src/images/");
+
+        File[] dir_contents = directory.listFiles();
+
+        for (File file: dir_contents)
+        {
+            if (file.getName().equals(fileName))
+                return false;
+        }
+        return true;
+    }
+
+    /**
+     * This method will validate if the integer given
+     * corresponds with a valid ASCII character that could be
+     * used in a file name
+     * @return
+     */
+    public boolean validCharacterValue(int asciiValue)
+    {
+        // 0-9 = ASCII range 48 to 57
+        if (asciiValue >= 48 && asciiValue <= 57)
+            return true;
+
+        // A-Z ASCII range 65 to 90
+        if (asciiValue >= 65 && asciiValue <= 90)
+            return true;
+
+        // a-z ASCII range 97 to 122
+        if (asciiValue >= 97 && asciiValue <= 122)
+            return true;
+
+        return false;
     }
 
     public String getFirstName() { return firstName; }

@@ -27,6 +27,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class ProfileController implements Initializable {
@@ -46,9 +47,13 @@ public class ProfileController implements Initializable {
     @FXML void saveProfile(ActionEvent event) { }
 
     private File userImage;
+    private boolean imageFileChanged;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        imageFileChanged = false;
+        // errmsglabel.settext("")
+        birthdayDatePicker.setValue(LocalDate.now().minusYears(18));
 
         try {
             userImage = new File("./src/images/default-image.jpg");
@@ -72,26 +77,6 @@ public class ProfileController implements Initializable {
         window.setScene(formViewScene);
         window.show();
     }
-
-    public void saveContactButtonPushed(ActionEvent event) throws IOException, SQLException {
-
-        Contact newContact = new Contact(
-                                firstNameTextField.getText(),
-                                lastNameTextField.getText(),
-                                birthdayDatePicker.getValue(),
-                                addressTextField.getText(),
-                                phoneTextField.getText()
-                            );
-
-        DbConnect.insertContactIntoDB(newContact);
-
-        Parent formViewParent = FXMLLoader.load(getClass().getResource("/View/contactsView.fxml"));
-        Scene formViewScene = new Scene(formViewParent);
-        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-        window.setScene(formViewScene);
-        window.show();
-    }
-
 
     /**
      * When the chooseImage button is pushed, a FileChooser window
@@ -140,6 +125,7 @@ public class ProfileController implements Initializable {
                     BufferedImage bufferedImage = ImageIO.read(userImage);
                     Image img = SwingFXUtils.toFXImage(bufferedImage, null);
                     imageView.setImage(img);
+                    imageFileChanged = true;
                 }
                 catch (IOException ioe)
                 {
@@ -151,4 +137,43 @@ public class ProfileController implements Initializable {
 
 
     }
+
+    public void saveContactButtonPushed(ActionEvent event) throws IOException {
+
+        Contact newContact;
+
+        try {
+            if (imageFileChanged) {
+                    newContact = new Contact(
+                            userImage,
+                            firstNameTextField.getText(),
+                            lastNameTextField.getText(),
+                            birthdayDatePicker.getValue(),
+                            addressTextField.getText(),
+                            phoneTextField.getText()
+                        );
+            }
+            else {
+                    newContact = new Contact(
+                            firstNameTextField.getText(),
+                            lastNameTextField.getText(),
+                            birthdayDatePicker.getValue(),
+                            addressTextField.getText(),
+                            phoneTextField.getText()
+                    );
+                    DbConnect.insertContactIntoDB(newContact);
+            }
+            DbConnect.insertContactIntoDB(newContact);
+        } catch (SQLException e) {
+            //errMsgLabel.setText = e.getMessage()
+            System.err.println(e.getMessage());
+        }
+
+        Parent formViewParent = FXMLLoader.load(getClass().getResource("/View/contactsView.fxml"));
+        Scene formViewScene = new Scene(formViewParent);
+        Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        window.setScene(formViewScene);
+        window.show();
+    }
+
 }

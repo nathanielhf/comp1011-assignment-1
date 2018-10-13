@@ -66,24 +66,12 @@ public class ContactsController implements Initializable {
         /**
          * this method connects to DB, selects all contacts, and returns them
          */
-//        try {
-//            tableView.getItems().addAll(DbConnect.getContacts());
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            tableView.getItems().addAll(DbConnect.getContacts());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-
-    /**
-     * Returns an ObservableList of People objects
-     */
-//    public ObservableList<Contact> testPeople() {
-//        ObservableList<Contact> contacts = FXCollections.observableArrayList();
-//        contacts.add(new Contact(1, "Nathaniel", "Fisher", "945 Dominion", "555-5555"));
-//
-//        return contacts;
-//    }
-
-
 
 
 }

@@ -66,11 +66,11 @@ public class ContactsController implements Initializable {
         /**
          * this method connects to DB, selects all contacts, and returns them
          */
-        try {
-            tableView.getItems().addAll(DbConnect.getContacts());
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            tableView.getItems().addAll(DbConnect.getContacts());
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 
     /**

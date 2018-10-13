@@ -25,7 +25,7 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="dc7ea98c-89f3-4c0e-96f9-777bfb0e2cd2">
-        <schema name="contactsdb" object-types="column, constraint, function, index, procedure, table, dataset trigger, view" />
+        <schema name="contactsdb" object-types="table, view" />
       </connection>
     </loaded-nodes>
   </component>

@@ -60,19 +60,25 @@ public class ProfileController implements Initializable /*, ControllerInterface 
         errorLabel.setText("");
         birthdayDatePicker.setValue(LocalDate.now().minusYears(18));
 
-        try {
-            userImage = new File("./src/images/default-image.jpg");
-            BufferedImage bufferedImage = ImageIO.read(userImage);
-            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
-            imageView.setImage(image);
-
-
-        } catch (IOException ioe) {
-            System.err.println((ioe.getMessage()));
-            errorLabel.setText(ioe.getMessage());
-        }
+//        try {
+//            userImage = new File("./src/images/default-image.jpg");
+//            BufferedImage bufferedImage = ImageIO.read(userImage);
+//            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+//            imageView.setImage(image);
+//
+//
+//        } catch (IOException ioe) {
+//            System.err.println((ioe.getMessage()));
+//            errorLabel.setText(ioe.getMessage());
+//        }
     }
 
+    /**
+     * This method allows the user to return to the Contacts View
+     * without saving any data to the database
+     * @param event
+     * @throws IOException
+     */
     public void cancelButtonPushed(ActionEvent event) throws IOException {
         Parent formViewParent = FXMLLoader.load(getClass().getResource("/View/contactsView.fxml"));
         Scene formViewScene = new Scene(formViewParent);
@@ -144,6 +150,12 @@ public class ProfileController implements Initializable /*, ControllerInterface 
 
     }
 
+    /**
+     * This method saves a new contact to the database
+     * then returns the user to the Contacts View
+     * @param event
+     * @throws IOException
+     */
     public void saveContactButtonPushed(ActionEvent event) throws IOException {
 
        // Contact newContact;

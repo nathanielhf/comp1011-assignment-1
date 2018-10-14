@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/create-and-populate-database-and-table.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ContactsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ContactsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/DbConnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/DbConnect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/Gx1vGkUZAnHiAonLijYdA1oA9WsUKktAWIN_20181014_16_29_41_Pro.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/XvbSrJWpHJzUtCfU0ePVVcET2RoTGOralettuce.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/imagesa1scXplwHiTT960jATkfG5ppODwSCECVlettuce.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/imagesmZOEwIywqFOUd3WOJMBo0BkYRqeDVUEQlettuce.jpg" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,7 +110,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="fxml" value="15" />
-          <entry key="java" value="38" />
+          <entry key="java" value="42" />
           <entry key="jpg" value="3" />
           <entry key="md" value="1" />
           <entry key="sql" value="5" />
@@ -126,7 +120,7 @@
         <counts>
           <entry key="DBN-SQL" value="5" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="38" />
+          <entry key="JAVA" value="42" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="15" />
         </counts>
@@ -135,7 +129,7 @@
         <counts>
           <entry key="dummy" value="9" />
           <entry key="fxml" value="21" />
-          <entry key="java" value="10327" />
+          <entry key="java" value="10989" />
           <entry key="md" value="323" />
           <entry key="sql" value="87" />
         </counts>
@@ -143,7 +137,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="DBN-SQL" value="87" />
-          <entry key="JAVA" value="10327" />
+          <entry key="JAVA" value="10989" />
           <entry key="PLAIN_TEXT" value="332" />
           <entry key="XML" value="21" />
         </counts>
@@ -159,73 +153,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/ProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            <state relative-caret-position="337">
+              <caret line="152" column="4" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="4" />
               <folding>
-                <element signature="e#2292#2719#0" />
-                <element signature="e#2725#2870#0" />
-                <element signature="e#2725#4912#0" />
+                <element signature="e#2408#2474#0" />
+                <element signature="e#2912#3057#0" />
+                <element signature="e#2819#5006#0" />
+                <element signature="e#5210#5276#0" />
+                <element signature="e#5210#7166#0" />
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Models/Contact.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="157" column="73" selection-start-line="157" selection-start-column="73" selection-end-line="157" selection-end-column="73" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;method#copyImageFile#0;class#Contact#0" />
-                <element signature="method#copyImageFile#0;class#Contact#0" />
-                <element signature="docComment;method#getUniqueFileName#0;class#Contact#0" />
-                <element signature="method#getUniqueFileName#0;class#Contact#0" />
-                <element signature="docComment;method#uniqueFileInDirectory#0;class#Contact#0" />
-                <element signature="method#uniqueFileInDirectory#0;class#Contact#0" />
-                <element signature="docComment;method#validCharacterValue#0;class#Contact#0" />
-                <element signature="method#validCharacterValue#0;class#Contact#0" />
-                <element signature="method#setLastName#0;class#Contact#0" />
-                <element signature="method#setAddress#0;class#Contact#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/create-and-populate-database-and-table.sql">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Controllers/ContactsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#createNewContactButtonPushed#0;class#ContactsController#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Models/DbConnect.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
+            <state relative-caret-position="240">
+              <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#getContacts#0;class#DbConnect#0" />
                 <element signature="method#insertContactIntoDB#0;class#DbConnect#0" />
               </folding>
             </state>
@@ -270,11 +218,11 @@
         <option value="$PROJECT_DIR$/src/View/ControllerInterface.java" />
         <option value="$PROJECT_DIR$/src/View/SceneChanger.java" />
         <option value="$PROJECT_DIR$/src/View/contactsView.fxml" />
+        <option value="$PROJECT_DIR$/src/Models/Contact.java" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Controllers/ContactsController.java" />
         <option value="$PROJECT_DIR$/src/Controllers/ProfileController.java" />
         <option value="$PROJECT_DIR$/src/Models/DbConnect.java" />
-        <option value="$PROJECT_DIR$/src/Models/Contact.java" />
-        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -366,7 +314,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539554787441" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539555297932" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysql-connector-java-6.0.5.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -601,44 +549,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controllers/ProfileController.java">
+    <entry file="file://$PROJECT_DIR$/create-and-populate-database-and-table.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-          <folding>
-            <element signature="e#2292#2719#0" />
-            <element signature="e#2725#2870#0" />
-            <element signature="e#2725#4912#0" />
-          </folding>
+        <state relative-caret-position="100">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/ContactsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="48" column="43" selection-start-line="48" selection-start-column="43" selection-end-line="48" selection-end-column="43" />
+        <state relative-caret-position="-122">
+          <caret line="68" column="44" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#createNewContactButtonPushed#0;class#ContactsController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Models/DbConnect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#insertContactIntoDB#0;class#DbConnect#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Models/Contact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="157" column="73" selection-start-line="157" selection-start-column="73" selection-end-line="157" selection-end-column="73" />
+        <state relative-caret-position="175">
+          <caret line="153" column="47" selection-start-line="153" selection-start-column="47" selection-end-line="153" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="docComment;method#copyImageFile#0;class#Contact#0" />
@@ -649,19 +583,37 @@
             <element signature="method#uniqueFileInDirectory#0;class#Contact#0" />
             <element signature="docComment;method#validCharacterValue#0;class#Contact#0" />
             <element signature="method#validCharacterValue#0;class#Contact#0" />
+            <element signature="method#setFirstName#0;class#Contact#0" />
             <element signature="method#setLastName#0;class#Contact#0" />
             <element signature="method#setAddress#0;class#Contact#0" />
+            <element signature="method#setPhone#0;class#Contact#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/create-and-populate-database-and-table.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/src/Controllers/ProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="59" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+        <state relative-caret-position="337">
+          <caret line="152" column="4" selection-start-line="152" selection-start-column="4" selection-end-line="152" selection-end-column="4" />
+          <folding>
+            <element signature="e#2408#2474#0" />
+            <element signature="e#2912#3057#0" />
+            <element signature="e#2819#5006#0" />
+            <element signature="e#5210#5276#0" />
+            <element signature="e#5210#7166#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Models/DbConnect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getContacts#0;class#DbConnect#0" />
+            <element signature="method#insertContactIntoDB#0;class#DbConnect#0" />
+          </folding>
         </state>
       </provider>
     </entry>

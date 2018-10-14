@@ -8,6 +8,12 @@ public class DbConnect {
     private static String user = "root";
     private static String password = "";
 
+    /**
+     * This method connects to the database, selects all contacts
+     * and then populates the GUI with all contacts
+     * @return
+     * @throws SQLException
+     */
     public static ArrayList<Contact> getContacts() throws SQLException {
         ArrayList<Contact> contacts = new ArrayList<>();
         Connection conn = null;
@@ -56,6 +62,12 @@ public class DbConnect {
         return contacts;
     }
 
+    /**
+     * This method receives a Contact object as an argument
+     * connects to the database, and executes an SQL insert statement
+     * @param newContact
+     * @throws SQLException
+     */
     public static void insertContactIntoDB(Contact newContact) throws SQLException {
         Connection conn=null;
         PreparedStatement ps = null;

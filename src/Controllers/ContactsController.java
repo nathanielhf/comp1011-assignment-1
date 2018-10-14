@@ -65,8 +65,8 @@ public class ContactsController implements Initializable {
     }
 
     /**
-     * when method called, change
-     * Scene to ProfileView
+     * This method changes scenes to the profileView,
+     * where a user can create a new contact
      */
     public void createNewContactButtonPushed(ActionEvent event) throws IOException {
         Parent formViewParent = FXMLLoader.load(getClass().getResource("/View/profileView.fxml"));

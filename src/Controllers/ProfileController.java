@@ -150,6 +150,7 @@ public class ProfileController implements Initializable /*, ControllerInterface 
 
     }
 
+
     /**
      * This method saves a new contact to the database
      * then returns the user to the Contacts View

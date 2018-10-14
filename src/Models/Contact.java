@@ -50,6 +50,52 @@ public class Contact {
         this.profileImage = profileImage;
     }
 
+    public String getFirstName() { return firstName; }
+
+    public void setFirstName(String firstName) {
+        if (!firstName.isEmpty())
+            this.firstName = firstName;
+        else
+            throw new IllegalArgumentException("Please enter a first name");
+    }
+
+    public String getLastName() { return lastName; }
+
+    public void setLastName(String lastName) {
+        if (!lastName.isEmpty())
+            this.lastName = lastName;
+        else
+            throw new IllegalArgumentException("Please enter a last name");
+    }
+
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(LocalDate birthday) {
+        this.birthday = birthday;
+    }
+
+    public String getAddress() { return address; }
+
+    public void setAddress(String address) {
+        if (!address.isEmpty())
+            this.address = address;
+        else
+            throw new IllegalArgumentException("Please enter an address");
+    }
+
+    public String getPhone() { return phone; }
+
+    public void setPhone(String phone) {
+        if (phone.matches("[1-9]\\d{2}-[1-9]\\d{2}-\\d{4}"))
+            this.phone = phone;
+        //        if (phone.length() > 0 && phone.length() <= 12)
+//            this.phone = phone;
+        else
+            throw new IllegalArgumentException("Please enter a valid phone number in the format 555-555-5555");
+    }
+
     /**
      * This method will copy the file specified to the images
      * directory on this server,
@@ -147,51 +193,5 @@ public class Contact {
             return true;
 
         return false;
-    }
-
-    public String getFirstName() { return firstName; }
-
-    public void setFirstName(String firstName) {
-        if (!firstName.isEmpty())
-            this.firstName = firstName;
-        else
-            throw new IllegalArgumentException("Please enter a first name");
-    }
-
-    public String getLastName() { return lastName; }
-
-    public void setLastName(String lastName) {
-        if (!lastName.isEmpty())
-            this.lastName = lastName;
-        else
-            throw new IllegalArgumentException("Please enter a last name");
-    }
-
-    public LocalDate getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(LocalDate birthday) {
-        this.birthday = birthday;
-    }
-
-    public String getAddress() { return address; }
-
-    public void setAddress(String address) {
-        if (!address.isEmpty())
-            this.address = address;
-        else
-            throw new IllegalArgumentException("Please enter an address");
-    }
-
-    public String getPhone() { return phone; }
-
-    public void setPhone(String phone) {
-        if (phone.matches("[1-9]\\d{2}-[1-9]\\d{2}-\\d{4}"))
-            this.phone = phone;
-        //        if (phone.length() > 0 && phone.length() <= 12)
-//            this.phone = phone;
-        else
-            throw new IllegalArgumentException("Please enter a valid phone number in the format 555-555-5555");
     }
 }

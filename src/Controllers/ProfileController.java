@@ -2,7 +2,7 @@ package Controllers;
 
 import Models.Contact;
 import Models.DbConnect;
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+import View.ControllerInterface;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -30,7 +31,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class ProfileController implements Initializable {
+public class ProfileController implements Initializable /*, ControllerInterface */ {
 
     @FXML private ImageView imageView;
     @FXML private Button chooseImageButton;
@@ -42,17 +43,21 @@ public class ProfileController implements Initializable {
     @FXML private TextField idField;
     @FXML private Button saveButton;
     @FXML private Button cancelButton;
+    @FXML private Label headerLabel;
+    @FXML private Label errorLabel;
     @FXML void cancelChanges(ActionEvent event) { }
     @FXML void chooseImage(ActionEvent event) { }
     @FXML void saveProfile(ActionEvent event) { }
 
     private File userImage;
     private boolean imageFileChanged;
+    private Contact newContact;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        headerLabel.setText("Create Contact");
         imageFileChanged = false;
-        // errmsglabel.settext("")
+        errorLabel.setText("");
         birthdayDatePicker.setValue(LocalDate.now().minusYears(18));
 
         try {
@@ -64,6 +69,7 @@ public class ProfileController implements Initializable {
 
         } catch (IOException ioe) {
             System.err.println((ioe.getMessage()));
+            errorLabel.setText(ioe.getMessage());
         }
     }
 
@@ -140,33 +146,41 @@ public class ProfileController implements Initializable {
 
     public void saveContactButtonPushed(ActionEvent event) throws IOException {
 
-        Contact newContact;
+       // Contact newContact;
 
         try {
             if (imageFileChanged) {
-                    newContact = new Contact(
-                            userImage,
-                            firstNameTextField.getText(),
-                            lastNameTextField.getText(),
-                            birthdayDatePicker.getValue(),
-                            addressTextField.getText(),
-                            phoneTextField.getText()
-                        );
+                    try {
+                        newContact = new Contact(
+                                userImage,
+                                firstNameTextField.getText(),
+                                lastNameTextField.getText(),
+                                birthdayDatePicker.getValue(),
+                                addressTextField.getText(),
+                                phoneTextField.getText()
+                            );
+                    }
+                    catch (IllegalArgumentException iae) {
+                        errorLabel.setText(iae.getMessage());
+                    }
             }
             else {
-                    newContact = new Contact(
-                            firstNameTextField.getText(),
-                            lastNameTextField.getText(),
-                            birthdayDatePicker.getValue(),
-                            addressTextField.getText(),
-                            phoneTextField.getText()
-                    );
-                    DbConnect.insertContactIntoDB(newContact);
+                    try {
+                        newContact = new Contact(
+                                firstNameTextField.getText(),
+                                lastNameTextField.getText(),
+                                birthdayDatePicker.getValue(),
+                                addressTextField.getText(),
+                                phoneTextField.getText()
+                        );
+                    } catch (IllegalArgumentException iae){
+                        errorLabel.setText(iae.getMessage());
+                    }
             }
             DbConnect.insertContactIntoDB(newContact);
-        } catch (SQLException e) {
+        } catch (SQLException sqle) {
             //errMsgLabel.setText = e.getMessage()
-            System.err.println(e.getMessage());
+            System.err.println(sqle.getMessage());
         }
 
         Parent formViewParent = FXMLLoader.load(getClass().getResource("/View/contactsView.fxml"));
@@ -176,4 +190,26 @@ public class ProfileController implements Initializable {
         window.show();
     }
 
+    //@Override
+//    public void preloadData(Contact contact) {
+//        this.newContact = contact;
+//        this.firstNameTextField.setText(contact.getFirstName());
+//        this.lastNameTextField.setText(contact.getLastName());
+//        this.birthdayDatePicker.setValue(contact.getBirthday());
+//        this.addressTextField.setText(contact.getAddress());
+//        this.phoneTextField.setText(contact.getPhone());
+//        this.headerLabel.setText("Edit Contact");
+//
+//        // load the image
+//        try {
+//            String imgLocation = ".\\src\\images\\" + contact.getProfileImage().getName();
+//
+//            userImage = new File(imgLocation);
+//            BufferedImage buffImg = ImageIO.read(userImage);
+//            Image img = SwingFXUtils.toFXImage(buffImg, null);
+//            imageView.setImage(img);
+//        } catch (IOException ioe) {
+//            System.err.println(ioe.getMessage());
+//        }
+//    }
 }

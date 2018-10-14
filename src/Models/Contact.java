@@ -4,7 +4,11 @@ import javafx.scene.image.Image;
 
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.security.SecureRandom;
 import java.time.LocalDate;
 
@@ -15,7 +19,7 @@ public class Contact {
     private File profileImage;
 
     public Contact(String firstName, String lastName, LocalDate birthday, String address, String phone) {
-        setProfileImage(new File("./src/image/default-image.jpg"));
+        setProfileImage(new File("./src/images/default-image.jpg"));
         setFirstName(firstName);
         setLastName(lastName);
         setBirthday(birthday);
@@ -23,18 +27,19 @@ public class Contact {
         setPhone(phone);
     }
 
-    public Contact(File userImage, String firstName, String lastName, LocalDate birthday, String address, String phone) {
+    public Contact(File userImage, String firstName, String lastName, LocalDate birthday, String address, String phone) throws IOException {
         this(firstName, lastName, birthday, address, phone);
         setProfileImage(userImage);
+        copyImageFile();
     }
 
     public int getID() { return ID; }
 
     public void setID(int ID) {
-        if (ID > 0 && ID < 4)
+        if (ID > 0)
             this.ID = ID;
         else
-            throw new IllegalArgumentException("Please enter a 3 digit ID number");
+            throw new IllegalArgumentException("ID error. Make sure you are calling the correct table in the DB");
     }
 
     public File getProfileImage() {
@@ -51,14 +56,19 @@ public class Contact {
      * then give it a unique name
      * @return
      */
-    public void copyImageFile()
-    {
+    public void copyImageFile() throws IOException {
         // create a new Path to copy the image into a local directory
         Path sourcePath = profileImage.toPath();
 
         String uniqueFileName = getUniqueFileName(profileImage.getName());
 
-        Path targetPath =
+        Path targetPath = Paths.get(".\\src\\images\\"+uniqueFileName);
+
+        // copy the file to the new directory
+        Files.copy(sourcePath, targetPath, StandardCopyOption.REPLACE_EXISTING);
+
+        // update the imageFile to point to the new File
+        profileImage = new File(targetPath.toString());
     }
 
     /**
@@ -177,9 +187,11 @@ public class Contact {
     public String getPhone() { return phone; }
 
     public void setPhone(String phone) {
-        if (phone.length() > 0 && phone.length() <= 12)
+        if (phone.matches("[1-9]\\d{2}-[1-9]\\d{2}-\\d{4}"))
             this.phone = phone;
+        //        if (phone.length() > 0 && phone.length() <= 12)
+//            this.phone = phone;
         else
-            throw new IllegalArgumentException("Please enter a phone number in the format 555-555-5555");
+            throw new IllegalArgumentException("Please enter a valid phone number in the format 555-555-5555");
     }
 }

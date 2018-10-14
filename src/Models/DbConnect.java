@@ -37,7 +37,7 @@ public class DbConnect {
                         resultSet.getString("phone")
                     );
                 newContact.setID(resultSet.getInt("contact_id"));
-                newContact.setProfileImage(new File(resultSet.getString("userImage")));
+                //newContact.setProfileImage(new File(resultSet.getString("userImage")));
                 contacts.add(newContact);
             }
         }

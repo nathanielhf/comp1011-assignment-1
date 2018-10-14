@@ -30,8 +30,8 @@ public class DbConnect {
             while (resultSet.next())
             {
                 Contact newContact = new Contact(
-                        resultSet.getString("lname"),
                         resultSet.getString("fname"),
+                        resultSet.getString("lname"),
                         resultSet.getDate("birthdate").toLocalDate(),
                         resultSet.getString("address"),
                         resultSet.getString("phone")

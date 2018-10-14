@@ -155,7 +155,7 @@ public class Contact {
         if (!firstName.isEmpty())
             this.firstName = firstName;
         else
-            throw new IllegalArgumentException("First Name cannot be empty");
+            throw new IllegalArgumentException("Please enter a first name");
     }
 
     public String getLastName() { return lastName; }
@@ -164,7 +164,7 @@ public class Contact {
         if (!lastName.isEmpty())
             this.lastName = lastName;
         else
-            throw new IllegalArgumentException("Last Name cannot be empty");
+            throw new IllegalArgumentException("Please enter a last name");
     }
 
     public LocalDate getBirthday() {
@@ -181,7 +181,7 @@ public class Contact {
         if (!address.isEmpty())
             this.address = address;
         else
-            throw new IllegalArgumentException("Address cannot be empty");
+            throw new IllegalArgumentException("Please enter an address");
     }
 
     public String getPhone() { return phone; }

@@ -93,7 +93,7 @@ public class Contact {
         //        if (phone.length() > 0 && phone.length() <= 12)
 //            this.phone = phone;
         else
-            throw new IllegalArgumentException("Please enter a valid phone number in the format 555-555-5555");
+            throw new IllegalArgumentException("Please enter a valid phone number \n in the format 555-555-5555");
     }
 
     /**

@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controllers/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Models/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/contactsView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/contactsView.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,15 +96,15 @@
     <session id="-681620727">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
+          <entry key="project.closed" value="16" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.5" value="3" />
-          <entry key="project.open.time.6" value="3" />
+          <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="3" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="16" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -129,7 +129,7 @@
         <counts>
           <entry key="dummy" value="9" />
           <entry key="fxml" value="21" />
-          <entry key="java" value="11074" />
+          <entry key="java" value="11080" />
           <entry key="md" value="323" />
           <entry key="sql" value="87" />
         </counts>
@@ -137,7 +137,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="DBN-SQL" value="87" />
-          <entry key="JAVA" value="11074" />
+          <entry key="JAVA" value="11080" />
           <entry key="PLAIN_TEXT" value="332" />
           <entry key="XML" value="21" />
         </counts>
@@ -153,7 +153,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Controllers/ProfileController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
+            <state relative-caret-position="1980">
               <caret line="190" column="21" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
               <folding>
                 <element signature="e#2408#3011#0" />
@@ -166,21 +166,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Models/Contact.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-256">
-              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state relative-caret-position="137">
+              <caret line="95" column="111" selection-start-line="95" selection-start-column="111" selection-end-line="95" selection-end-column="111" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#setID#0;class#Contact#0" />
-                <element signature="e#1378#1379#0" expanded="true" />
-                <element signature="e#1413#1414#0" expanded="true" />
                 <element signature="method#setFirstName#0;class#Contact#0" />
                 <element signature="method#setLastName#0;class#Contact#0" />
-                <element signature="e#2097#2098#0" expanded="true" />
-                <element signature="e#2128#2129#0" expanded="true" />
-                <element signature="e#2179#2180#0" expanded="true" />
-                <element signature="e#2219#2220#0" expanded="true" />
                 <element signature="method#setAddress#0;class#Contact#0" />
-                <element signature="method#setPhone#0;class#Contact#0" />
                 <element signature="docComment;method#copyImageFile#0;class#Contact#0" />
                 <element signature="method#copyImageFile#0;class#Contact#0" />
                 <element signature="docComment;method#getUniqueFileName#0;class#Contact#0" />
@@ -328,7 +321,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539560421149" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539568814124" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../mysql-connector-java-6.0.5.jar!/" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -451,7 +444,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23221476" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.23557048" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.3295302" />
       <window_info id="Designer" order="3" />
@@ -461,7 +454,7 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3427762" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3427762" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4036827" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -529,12 +522,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/imagesa1scXplwHiTT960jATkfG5ppODwSCECVlettuce.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/images/imagesmZOEwIywqFOUd3WOJMBo0BkYRqeDVUEQlettuce.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/imagesa1scXplwHiTT960jATkfG5ppODwSCECVlettuce.jpg" />
+    <entry file="file://$PROJECT_DIR$/src/images/imagesmZOEwIywqFOUd3WOJMBo0BkYRqeDVUEQlettuce.jpg" />
     <entry file="file://$PROJECT_DIR$/src/images/default-image.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -599,7 +588,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controllers/ProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
+        <state relative-caret-position="1980">
           <caret line="190" column="21" selection-start-line="190" selection-start-column="21" selection-end-line="190" selection-end-column="21" />
           <folding>
             <element signature="e#2408#3011#0" />
@@ -610,21 +599,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Models/Contact.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-256">
-          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="137">
+          <caret line="95" column="111" selection-start-line="95" selection-start-column="111" selection-end-line="95" selection-end-column="111" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#setID#0;class#Contact#0" />
-            <element signature="e#1378#1379#0" expanded="true" />
-            <element signature="e#1413#1414#0" expanded="true" />
             <element signature="method#setFirstName#0;class#Contact#0" />
             <element signature="method#setLastName#0;class#Contact#0" />
-            <element signature="e#2097#2098#0" expanded="true" />
-            <element signature="e#2128#2129#0" expanded="true" />
-            <element signature="e#2179#2180#0" expanded="true" />
-            <element signature="e#2219#2220#0" expanded="true" />
             <element signature="method#setAddress#0;class#Contact#0" />
-            <element signature="method#setPhone#0;class#Contact#0" />
             <element signature="docComment;method#copyImageFile#0;class#Contact#0" />
             <element signature="method#copyImageFile#0;class#Contact#0" />
             <element signature="docComment;method#getUniqueFileName#0;class#Contact#0" />

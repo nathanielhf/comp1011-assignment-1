@@ -30,13 +30,13 @@
                   </HBox>
                   <HBox prefHeight="227.0" prefWidth="560.0">
                      <children>
-                        <TableView fx:id="tableView" onMouseClicked="#contactSelected" prefHeight="200.0" prefWidth="560.0">
+                        <TableView fx:id="tableView" onMouseClicked="#contactSelected" prefHeight="227.0" prefWidth="560.0">
                           <columns>
                             <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
-                            <TableColumn fx:id="firstNameColumn" prefWidth="138.0" text="First Name" />
-                              <TableColumn fx:id="lastNameColumn" prefWidth="148.0" text="Last Name" />
-                              <TableColumn fx:id="addressColumn" minWidth="7.0" prefWidth="118.0" text="Address" />
-                              <TableColumn fx:id="phoneColumn" prefWidth="105.0" text="Phone" />
+                            <TableColumn fx:id="firstNameColumn" prefWidth="126.39996337890625" text="First Name" />
+                              <TableColumn fx:id="lastNameColumn" prefWidth="117.60003662109375" text="Last Name" />
+                              <TableColumn fx:id="addressColumn" minWidth="7.0" prefWidth="150.39996337890625" text="Address" />
+                              <TableColumn fx:id="phoneColumn" prefWidth="113.60003662109375" text="Phone" />
                           </columns>
                         </TableView>
                      </children>

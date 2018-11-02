@@ -18,9 +18,20 @@ public class SceneChanger {
      * the .fxml file name for the view, and the ActionEvent
      * that triggered the change
      */
-    public void changeScenes()
+    public void changeScenes(ActionEvent event, String viewName, String title) throws IOException
     {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource(viewName));
+        Parent parent = loader.load();
 
+        Scene scene = new Scene(parent);
+
+        // Get the stage from the event that was passed in
+        Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+
+        stage.setTitle(title);
+        stage.setScene(scene);
+        stage.show();
     }
 
     /**
@@ -34,6 +45,7 @@ public class SceneChanger {
 
         Scene scene = new Scene(parent);
 
+        // access the controller class and preload the contact data
         controllerInterface = loader.getController();
         controllerInterface.preloadData(contact);
 

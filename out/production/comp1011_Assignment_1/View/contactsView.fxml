@@ -45,7 +45,7 @@
                      <children>
                         <TextField fx:id="searchBar" prefHeight="25.0" prefWidth="180.0" promptText="Search" />
                         <Button fx:id="searchButton" mnemonicParsing="false" text="Search" />
-                        <Button fx:id="editContactButton" mnemonicParsing="false" text="Edit Contact" />
+                        <Button fx:id="editContactButton" mnemonicParsing="false" onAction="#editContactButtonPushed" text="Edit Contact" />
                         <Button fx:id="createNewContact" mnemonicParsing="false" onAction="#createNewContactButtonPushed" text="Create new contact" />
                      </children>
                      <VBox.margin>

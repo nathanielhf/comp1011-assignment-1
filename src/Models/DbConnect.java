@@ -43,7 +43,7 @@ public class DbConnect {
                         resultSet.getString("phone")
                     );
                 newContact.setID(resultSet.getInt("contact_id"));
-                //newContact.setProfileImage(new File(resultSet.getString("userImage")));
+                newContact.setProfileImage(new File(resultSet.getString("userImage")));
                 contacts.add(newContact);
             }
         }
@@ -83,7 +83,7 @@ public class DbConnect {
             // 3. create the PReparedStatement
             ps = conn.prepareStatement(sql);
 
-            //Date birthdate = Date.valueOf(newContact.getLastName());
+            Date birthdate = Date.valueOf(newContact.getBirthday());
 
             // 4. bind the parameters
            ps.setString(1, newContact.getProfileImage().getName());
@@ -106,5 +106,53 @@ public class DbConnect {
                 ps.close();
         }
     }
+
+    /**
+     * This method will update an existing Contact in the database
+     */
+    public static void updateContactInDB(Contact updatedContact) throws SQLException
+    {
+        Connection conn = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            // 1. Connect to database
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactsdb?useSSL=false", user, password);
+
+            // 2. Create a String that holds our SQL update command with ? for user inputs
+            String sql = "UPDATE contacts SET userImage = ?, fname = ?, lname = ?, birthdate = ?, address = ?, phone = ? WHERE contact_id = ?;";
+
+            // 3. prepare the query against SQL injection
+            preparedStatement = conn.prepareStatement(sql);
+
+            // 4. convert the birthday into a Date object
+            Date birthdate = Date.valueOf(updatedContact.getBirthday());
+
+            // 5. bind the parameters
+            preparedStatement.setString(1, updatedContact.getProfileImage().getName());
+            preparedStatement.setString(2, updatedContact.getFirstName());
+            preparedStatement.setString(3, updatedContact.getLastName());
+            preparedStatement.setDate(4, Date.valueOf(updatedContact.getBirthday()));
+            preparedStatement.setString(5, updatedContact.getAddress());
+            preparedStatement.setString(6, updatedContact.getPhone());
+            preparedStatement.setInt(7, updatedContact.getID());
+
+            // 6. execute the update command on the SQL server
+            preparedStatement.executeUpdate();
+            preparedStatement.close();
+        }
+        catch (SQLException e){
+            System.err.println(e.getMessage());
+        }
+        finally
+        {
+            if (conn != null)
+                conn.close();
+            if (preparedStatement != null)
+                preparedStatement.close();
+        }
+    }
+
+
 
 }

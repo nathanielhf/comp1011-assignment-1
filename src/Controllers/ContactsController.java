@@ -91,17 +91,17 @@ public class ContactsController implements Initializable {
      * If the edit button is pushed, send the selected user to the
      * ProfileView scene and preload it with data
      */
-//    public void editContactButtonPushed(ActionEvent event) throws IOException {
-//        SceneChanger sc = new SceneChanger();
-//        Contact contact = this.tableView.getSelectionModel().getSelectedItem();
-//        ProfileController pc = new ProfileController();
-//
-//        System.out.printf("The user image is in %s%n", contact.getProfileImage().getCanonicalPath());
-//        System.out.printf("The user fname is in %s%n", contact.getFirstName());
-//        System.out.printf("The user image is in %s%n", contact.getProfileImage());
-//
-//        sc.changeScenes(event, "profileView.fxml", "Edit Contact", contact, pc);
-//    }
+    public void editContactButtonPushed(ActionEvent event) throws IOException {
+        SceneChanger sc = new SceneChanger();
+        Contact contact = this.tableView.getSelectionModel().getSelectedItem();
+        ProfileController pc = new ProfileController();
+
+        System.out.printf("The user image is in %s%n", contact.getProfileImage().getCanonicalPath());
+        System.out.printf("The user fname is in %s%n", contact.getFirstName());
+        System.out.printf("The user image is in %s%n", contact.getProfileImage());
+
+        sc.changeScenes(event, "profileView.fxml", "Edit Contact", contact, pc);
+    }
 
 }
 

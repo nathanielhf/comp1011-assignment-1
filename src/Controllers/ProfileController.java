@@ -31,7 +31,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-public class ProfileController implements Initializable /*, ControllerInterface */ {
+public class ProfileController implements Initializable, ControllerInterface  {
 
     @FXML private ImageView imageView;
     @FXML private Button chooseImageButton;
@@ -162,7 +162,14 @@ public class ProfileController implements Initializable /*, ControllerInterface 
        // Contact newContact;
 
         try {
-            if (imageFileChanged) {
+            if (newContact != null) // we need to edit an existing volunteer
+            {
+                updateContact();
+                DbConnect.updateContactInDB(newContact);
+            }
+            else // we need to create a new volunteer
+            {
+                if (imageFileChanged) {
                     try {
                         newContact = new Contact(
                                 userImage,
@@ -171,13 +178,13 @@ public class ProfileController implements Initializable /*, ControllerInterface 
                                 birthdayDatePicker.getValue(),
                                 addressTextField.getText(),
                                 phoneTextField.getText()
-                            );
+                        );
                     }
                     catch (IllegalArgumentException iae) {
                         errorLabel.setText(iae.getMessage());
                     }
-            }
-            else {
+                }
+                else {
                     try {
                         newContact = new Contact(
                                 firstNameTextField.getText(),
@@ -189,8 +196,10 @@ public class ProfileController implements Initializable /*, ControllerInterface 
                     } catch (IllegalArgumentException iae){
                         errorLabel.setText(iae.getMessage());
                     }
+                }
+                DbConnect.insertContactIntoDB(newContact);
             }
-            DbConnect.insertContactIntoDB(newContact);
+
         } catch (SQLException sqle) {
             //errMsgLabel.setText = e.getMessage()
             System.err.println(sqle.getMessage());
@@ -203,26 +212,39 @@ public class ProfileController implements Initializable /*, ControllerInterface 
         window.show();
     }
 
-    //@Override
-//    public void preloadData(Contact contact) {
-//        this.newContact = contact;
-//        this.firstNameTextField.setText(contact.getFirstName());
-//        this.lastNameTextField.setText(contact.getLastName());
-//        this.birthdayDatePicker.setValue(contact.getBirthday());
-//        this.addressTextField.setText(contact.getAddress());
-//        this.phoneTextField.setText(contact.getPhone());
-//        this.headerLabel.setText("Edit Contact");
-//
-//        // load the image
-//        try {
-//            String imgLocation = ".\\src\\images\\" + contact.getProfileImage().getName();
-//
-//            userImage = new File(imgLocation);
-//            BufferedImage buffImg = ImageIO.read(userImage);
-//            Image img = SwingFXUtils.toFXImage(buffImg, null);
-//            imageView.setImage(img);
-//        } catch (IOException ioe) {
-//            System.err.println(ioe.getMessage());
-//        }
-//    }
+    @Override
+    public void preloadData(Contact contact) {
+        this.newContact = contact;
+        this.firstNameTextField.setText(contact.getFirstName());
+        this.lastNameTextField.setText(contact.getLastName());
+        this.birthdayDatePicker.setValue(contact.getBirthday());
+        this.addressTextField.setText(contact.getAddress());
+        this.phoneTextField.setText(contact.getPhone());
+        this.headerLabel.setText("Edit Contact");
+
+        // load the image
+        try {
+            String imgLocation = ".\\src\\images\\" + contact.getProfileImage().getName();
+            //userImage = contact.getProfileImage();
+            userImage = new File(imgLocation);
+            BufferedImage buffImg = ImageIO.read(userImage);
+            Image img = SwingFXUtils.toFXImage(buffImg, null);
+            imageView.setImage(img);
+        } catch (IOException ioe) {
+            System.err.println(ioe.getMessage());
+        }
+    }
+
+    /**
+     * This method wil update the colunteer with the data that is stored in the GUI
+     */
+    private void updateContact() throws IOException {
+        newContact.setFirstName(firstNameTextField.getText());
+        newContact.setLastName(lastNameTextField.getText());
+        newContact.setPhone(phoneTextField.getText());
+        newContact.setBirthday(birthdayDatePicker.getValue());
+        newContact.setAddress(addressTextField.getText());
+        newContact.setProfileImage(userImage);
+        newContact.copyImageFile();
+    }
 }

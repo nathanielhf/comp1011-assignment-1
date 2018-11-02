@@ -88,7 +88,7 @@ public class Contact {
     public String getPhone() { return phone; }
 
     public void setPhone(String phone) {
-        if (phone.matches("[1-9]\\d{2}-[1-9]\\d{2}-\\d{4}"))
+        if (phone.matches("[2-9]\\d{2}-[2-9]\\d{2}-\\d{4}"))
             this.phone = phone;
         //        if (phone.length() > 0 && phone.length() <= 12)
 //            this.phone = phone;
